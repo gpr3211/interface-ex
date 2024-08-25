@@ -64,4 +64,13 @@ func main() {
 		}
 	}
 
+	// Step 5
+	fmt.Printf("---------------\n\nDescribable interface\n")
+	for _, p := range products {
+		switch item := p.(type) {
+		case store.Describable:
+			fmt.Println("Name", item.GetName(), "Category", item.GetCategory(), "Price: ", item.Price(0.2))
+		}
+	}
+
 }
