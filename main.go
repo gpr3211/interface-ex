@@ -13,6 +13,9 @@ func main() {
 	kayak := store.NewProduct("Kayak", "Watersports", 275)
 	lifejacket := &store.Product{Name: "Lifejacket", Category: "Watersports"}
 
+	// NOTICE LIFEJACKET IS inserted directly into the products struct WITHOUT A PRICE
+	// KEY DETAIL ON WHY IT DOESNT PRINT LATER WHILE RANGING PRODUCTS
+
 	for _, p := range []*store.Product{kayak, lifejacket} {
 		fmt.Println("Name", p.Name, "Category", p.Category, "Price", p.Price(0.2)) // Notice here p.Price is  the method Price() which adds a 20% tax to the price
 	}
